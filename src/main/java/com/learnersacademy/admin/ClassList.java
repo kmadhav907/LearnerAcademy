@@ -50,16 +50,16 @@ public class ClassList extends HttpServlet {
 		// TODO Auto-generated method stub
 		if(conn != null) {
 			try {
-				String query = "select Classes.Time, Classes.Id, Teachers.fname ,Teachers.lname from Classes Inner Join Teachers where Classes.teacher = Teachers.id";
+				String query = "select Classes.Time, Classes.Id, Teachers.fname ,Teachers.lname, Subjects.name From Classes Inner Join Teachers on Classes.teacher = Teachers.id  Inner Join Subjects on Subjects.id = Classes.subject";
 				Statement statement = conn.createStatement();
 				ResultSet rs = statement.executeQuery(query);
 				ArrayList<ClassModel> classes = new ArrayList<ClassModel>();
 				while(rs.next()) {
 //					System.out.println("Class Number:" + rs.getInt(2)+ "Class Timinings:" + rs.getString(1) + "Class Teacher:" + rs.getString(3)+rs.getString(4));
-					ClassModel temp = new ClassModel(rs.getString(1), rs.getString(3)+ rs.getString(4), rs.getInt(2));
+					ClassModel temp = new ClassModel(rs.getString(1), rs.getString(3)+ " "+ rs.getString(4), rs.getInt(2), rs.getString(5));
 					classes.add(temp);
 				}
-				if(classes.size() == 0) {
+				if(classes.size() == 0 || classes == null) {
 					RequestDispatcher rd=request.getRequestDispatcher("/Error.jsp");  
 					rd.forward(request, response);
 				}

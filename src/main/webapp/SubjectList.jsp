@@ -1,14 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@page import="java.util.ArrayList"%>
-    <%@page import="com.models.ClassModel"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 
 <%@ include file="Header.jsp" %>
-<title>Class Result Page</title>
+<title>Subject Result Page</title>
 <style>
 .container {
 	display: flex;
@@ -22,33 +21,21 @@
 </head>
 <body>
 <div class="container">
-	<h1 style="color:red">Class Result are:</h1>
+	<h1 style="color:red">Subject Result are:</h1>
 	<table class="table table-hover">
 		<thead>
 		<tr>
 		<th scope="col">
-			Class Name
-		</th>
-		<th scope="col">
-			Class Timings
-		</th>
-		<th scope="col">
-			Class Teacher
-		</th>
-		<th scope="col">
 			Subject Name
 		</th>
-		
 		</tr>
 		</thead>
 		<tbody>
-		 <% ArrayList<ClassModel> classes = (ArrayList<ClassModel>)request.getAttribute("classes");
-        for(ClassModel c:classes){%>
+		 <% ArrayList<String> subjects = (ArrayList<String>)request.getAttribute("subjects");
+        for(String s:subjects){%>
             <tr>
-       			<td><%=c.getClassNumber() %></td>
-       			<td><%=c.getTiminings() %></td>
-       			<td><%=c.getClassTeacher() %></td>
-       			<td><%=c.getSubjectName() %></td>
+       			<td><%=s %></td>
+    
             </tr>
             <%}%>
             </tbody>

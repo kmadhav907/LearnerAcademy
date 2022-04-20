@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@page import="java.util.ArrayList"%>
-    <%@page import="com.models.ClassModel"%>
+    <%@page import="com.models.TeacherModel"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 
 <%@ include file="Header.jsp" %>
-<title>Class Result Page</title>
+<title>Teacher Result Page</title>
 <style>
 .container {
 	display: flex;
@@ -22,33 +22,33 @@
 </head>
 <body>
 <div class="container">
-	<h1 style="color:red">Class Result are:</h1>
+	<h1 style="color:red">Teacher Result are:</h1>
 	<table class="table table-hover">
 		<thead>
 		<tr>
 		<th scope="col">
-			Class Name
+			Teacher ID
 		</th>
 		<th scope="col">
-			Class Timings
+			Teacher Name
 		</th>
 		<th scope="col">
-			Class Teacher
+			Age
 		</th>
 		<th scope="col">
-			Subject Name
+			Subject
 		</th>
 		
 		</tr>
 		</thead>
 		<tbody>
-		 <% ArrayList<ClassModel> classes = (ArrayList<ClassModel>)request.getAttribute("classes");
-        for(ClassModel c:classes){%>
+		 <% ArrayList<TeacherModel> teachers = (ArrayList<TeacherModel>)request.getAttribute("teachers");
+        for(TeacherModel t:teachers){%>
             <tr>
-       			<td><%=c.getClassNumber() %></td>
-       			<td><%=c.getTiminings() %></td>
-       			<td><%=c.getClassTeacher() %></td>
-       			<td><%=c.getSubjectName() %></td>
+       			<td><%=t.getId() %></td>
+       			<td><%=t.getName() %></td>
+       			<td><%=t.getAge() %></td>
+       			<td><%=t.getSubjectName() %>
             </tr>
             <%}%>
             </tbody>

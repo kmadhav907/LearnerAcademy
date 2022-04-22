@@ -81,5 +81,15 @@ public class ClassList extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
+	public void destroy() {
+		if(conn != null) {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
 
 }

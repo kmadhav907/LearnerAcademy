@@ -25,7 +25,7 @@
 			<a href="/LearnerAcademy/SubjectList" class="btn btn-secondary">Subject list</a>
 			<a href="/LearnerAcademy/TeacherList" class="btn btn-warning">Teacher list</a>
 			<a href="/LearnerAcademy/AssignTeacher.jsp" class="btn btn-dark">Assign Teacher</a>
-			<a href="/LearnerAcademy/AssignSubject.jsp" class="btn btn-success">Assign Subject</a>
+			<a href="/LearnerAcademy/AssignClass" class="btn btn-success">Assign Class</a>
 			<a href="/LearnerAcademy/StudentReport" class="btn btn-primary">Student Reports</a>
 
 		</div>

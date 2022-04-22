@@ -3,7 +3,7 @@
 
 ## How to run the project 
 
-- <code> Clone this repository </code>
+- Clone this repository
 - ### Set up your src/main/webapp/WEB-INF/web.xml with context parameters
     ---
       <context-param>
